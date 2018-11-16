@@ -11,18 +11,34 @@ New York City Taxi Trip Duration Prediction
 https://www.kaggle.com/c/nyc-taxi-trip-duration
 
 
-Generate your CSV
+# Generate Visualizations
+This script generates graphs that were used for analyzing the dataset.
+
+Files Required: train.csv
 ```
-head -n1000 dataset.csv > small.csv
+python visualization.py
 ```
 
-Generate a subset of train.csv taking random samples from the dataset
+# Data Cleaning & Feature Engineering
+This script takes cleans and generates new features and saves it into a new file.
+
+Dependencies: [Routing Application](#setting-up-routing-application) must be running 
+File Required: train.csv
+File Output: processed_train.csv
 ```
-tail -n +2 nyc_taxi_train_dataset.csv | gshuf -n 100000 > processed.csv
-head -n1 nyc_taxi_train_dataset.csv | cat - processed.csv > temp && mv temp processed.csv
+python feature_engineering.py
 ```
 
-# Setting up OSRM on docker
+# Creating Models
+
+Adding Scripts from JJ
+
+# Setting up Routing Application
+This application uses the Open Source Routing Machine (OSRM) docker container that finds the shortest travel distance for cars between two points. 
+
+1. Download OpenStreetMap Data from New York from: http://download.geofabrik.de/north-america/us/new-york.html
+2. Download `new-york-latest.osm.pbf` and put into `./data/new-york-latest.osm.pbf`
+3. Run the following Docker Command to start the server
 ```
 docker run -t -v $(pwd):/data osrm/osrm-backend osrm-extract -p /opt/car.lua /data/new-york-latest.osm.pbf
 docker run -t -v $(pwd):/data osrm/osrm-backend osrm-partition /data/new-york-latest.osm.pbf
