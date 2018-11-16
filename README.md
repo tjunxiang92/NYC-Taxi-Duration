@@ -6,7 +6,7 @@
 - GUO WEI (U1520604K)
 - LIU ZHIWEI (U1520546E)
 
-Contents
+# Table of Contents
 - [Dataset URL](#dataset-url)
 - [Generate Visualizations](#generate-visualizations)
 - [Data Cleaning & Feature Engineering](#data-cleaning--feature-engineering)
@@ -14,7 +14,7 @@ Contents
 - [Setting up Routing Application](#setting-up-routing-application)
 
 
-## Dataset URL
+# Dataset URL
 New York City Taxi Trip Duration Prediction  
 https://www.kaggle.com/c/nyc-taxi-trip-duration
 
