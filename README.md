@@ -6,6 +6,14 @@
 - GUO WEI (U1520604K)
 - LIU ZHIWEI (U1520546E)
 
+Contents
+- [Dataset URL](#dataset-url)
+- [Generate Visualizations](#generate-visualizations)
+- [Data Cleaning & Feature Engineering](#data-cleaning--feature-engineering)
+- [Training Models](#training-models)
+- [Setting up Routing Application](#setting-up-routing-application)
+
+
 ## Dataset URL
 New York City Taxi Trip Duration Prediction  
 https://www.kaggle.com/c/nyc-taxi-trip-duration
@@ -23,15 +31,43 @@ python visualization.py
 This script takes cleans and generates new features and saves it into a new file.
 
 Dependencies: [Routing Application](#setting-up-routing-application) must be running 
-File Required: train.csv
-File Output: processed_train.csv
+Files Required:
+* train.csv
+* test.csv
+
+Files Output:
+* processed_train.csv
+* processed_test.csv
 ```
 python feature_engineering.py
 ```
 
-# Creating Models
+# Training Models
 
-Adding Scripts from JJ
+Please make sure that you have anaconda install / jupyter notebook available since the code base is currently in a .ipynb file which is basically a jupyter notebook file. After installing, just type in the command:
+
+Files Required: 
+* processed_train.csv
+* processed_test.csv
+* train.csv 
+* test.csv
+
+Files Output: 
+* nyc_kaggle_xgboost_top5_feature.csv
+* nyc_kaggle_linear_regression_no_feature.csv
+* nyc_kaggle_xgboost_no_feature.csv
+* nyc_random_forest_no_feature.csv
+* nyc_kaggle_xgboost.csv
+* nyc_kaggle_linear_regression.csv
+* nyc_kaggle_random_forest.csv
+
+```
+jupyter notebook 
+```
+
+Then go into the model_creation model, and thereafter click the Model Creation.ipynb file. We have our past work and result inside as well for the notebook. However, if needed, please restart and run all. The notebook will run and generate the results for you. 
+
+The requirements to run the notebook can be found at ./model_creation/requirements.txt
 
 # Setting up Routing Application
 This application uses the Open Source Routing Machine (OSRM) docker container that finds the shortest travel distance for cars between two points. 
